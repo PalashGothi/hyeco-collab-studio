@@ -128,7 +128,7 @@ export default function Hero() {
           className="flex justify-center items-center mb-12"
         >
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-            <Button size="lg" className="bg-white text-purple-600 hover:bg-gray-100 px-8 py-3 text-lg font-semibold">
+            <Button size="lg" className="gradient-bg text-white hover:opacity-90 flex items-center gap-2 w-fit">
               <Link href="#facilities">Explore Our Facilities</Link>
             </Button>
           </motion.div>

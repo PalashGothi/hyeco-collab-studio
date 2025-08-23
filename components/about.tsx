@@ -14,7 +14,7 @@ export default function About() {
             viewport={{ once: true }}
             className="text-4xl font-bold gradient-text mb-8"
           >
-            About Hye Collab Studio
+            About Hyeco
           </motion.h2>
 
           <motion.div
@@ -25,8 +25,8 @@ export default function About() {
             className="bg-gradient-to-r from-yellow-50 via-orange-50 via-pink-50 to-purple-50 rounded-2xl p-8 mb-12"
           >
             <p className="text-xl text-gray-700 leading-relaxed mb-6">
-              "Have Your Expression with Hyeco's jamming, event, workshop and podcast facility under one roof and share
-              your vibes with the planet."
+              Have Your Expression with jamming, event, workshop and podcast facility under one roof and share
+              your vibes with the planet.
             </p>
           </motion.div>
 
@@ -77,7 +77,7 @@ export default function About() {
             >
               <h3 className="text-2xl font-bold text-gray-800 mb-4">Visit Us</h3>
               <div className="text-gray-600 mb-6">
-                <p className="font-semibold">Hyeco Collab Studio</p>
+                <p className="font-semibold">Hyeco- Hye Collab Studio</p>
                 <p>No 73, 3rd Floor, Bineeta Plaza</p>
                 <p>Near Shubh Enclave, Harlur Main Road</p>
                 <p>Bengaluru – 560102</p>

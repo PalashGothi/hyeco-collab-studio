@@ -90,7 +90,7 @@ export default function Header() {
                 className="gradient-bg text-white hover:opacity-90 transition-all duration-300 hover:scale-105 flex items-center gap-2"
               >
                 <Phone size={18} />
-                Call Now
+                Call
               </Button>
             </motion.div>
 
@@ -105,7 +105,7 @@ export default function Header() {
                 className="gradient-bg text-white hover:opacity-90 transition-all duration-300 hover:scale-105 flex items-center gap-2"
               >
                 <FaWhatsapp size={18} />
-                WhatsApp Now
+               Book on WhatsApp 
               </Button>
             </motion.div>
           </nav>
