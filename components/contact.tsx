@@ -24,7 +24,7 @@ export default function Contact() {
   }
 
   // Minimum height for consistent card content height
-  const cardContentClass = "flex flex-col justify-between min-h-[180px]" 
+  const cardContentClass = "flex flex-col justify-between min-h-[180px]"
 
   return (
     <section id="contact" className="py-20 bg-gray-50">

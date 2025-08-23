@@ -100,16 +100,14 @@ export default function About() {
                 ></iframe>
               </motion.div>
 
-              <motion.a
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                href="https://g.co/kgs/JGx46Z4"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block text-blue-600 hover:text-blue-800 font-medium transition-colors"
-              >
-                View on Google Maps →
-              </motion.a>
+              <a
+              href="https://www.google.com/maps/search/?api=1&query=Hyeco+Collab+Studio+Bengaluru"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-6 py-2 text-white bg-blue-600 rounded hover:bg-blue-700 transition"
+            >
+              Get Directions
+            </a>
             </motion.div>
           </div>
         </div>
