@@ -3,15 +3,16 @@
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import Image from "next/image"
 import { ArrowDown, ChevronLeft, ChevronRight } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 
 const heroImages = [
-  { url: "/IMG_5709.jpeg", alt: "Modern Music Studio" },
-  { url: "/IMG_5669.jpeg", alt: "Creative Workspace" },
-  { url: "/IMG_5673.jpeg", alt: "Podcast Studio" },
-  { url: "/DWS06662.jpg", alt: "Event Space" },
-  { url: "/IMG_5675.jpeg", alt: "Workshop Room" },
+  { url: "/IMG_5709.jpeg", alt: "Modern music studio setup with instruments" },
+  { url: "/IMG_5669.jpeg", alt: "Creative collaborative workspace with seating" },
+  { url: "/IMG_5673.jpeg", alt: "Podcast recording studio with microphones" },
+  { url: "/DWS06662.jpg", alt: "Event space with stage and lighting" },
+  { url: "/IMG_5675.jpeg", alt: "Workshop room for training and sessions" },
 ]
 
 export default function Hero() {
@@ -28,7 +29,11 @@ export default function Hero() {
   const prevImage = () => setCurrentImage((prev) => (prev - 1 + heroImages.length) % heroImages.length)
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <section
+      id="home"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20" 
+      // pt-20 ensures content starts below the fixed header
+    >
       {/* Background Slideshow */}
       <div className="absolute inset-0">
         <AnimatePresence mode="wait">
@@ -40,12 +45,14 @@ export default function Hero() {
             transition={{ duration: 1 }}
             className="absolute inset-0"
           >
-            <img
+            <Image
               src={heroImages[currentImage].url}
               alt={heroImages[currentImage].alt}
-              className="w-full h-full object-cover"
+              fill
+              priority
+              className="object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/40 to-black/60"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/50 to-black/70"></div>
           </motion.div>
         </AnimatePresence>
       </div>
@@ -53,24 +60,32 @@ export default function Hero() {
       {/* Slideshow Controls */}
       <button
         onClick={prevImage}
-        className="absolute left-4 top-1/2 transform -translate-y-1/2 z-20 bg-white/20 backdrop-blur-sm rounded-full p-2 hover:bg-white/30 transition-all"
+        aria-label="Previous slide"
+        className="absolute left-4 top-1/2 transform -translate-y-1/2 z-20 bg-white/20 backdrop-blur-sm 
+                   rounded-full p-2 hover:bg-white/30 transition-all"
       >
         <ChevronLeft className="text-white" size={24} />
       </button>
+
       <button
         onClick={nextImage}
-        className="absolute right-4 top-1/2 transform -translate-y-1/2 z-20 bg-white/20 backdrop-blur-sm rounded-full p-2 hover:bg-white/30 transition-all"
+        aria-label="Next slide"
+        className="absolute right-4 top-1/2 transform -translate-y-1/2 z-20 bg-white/20 backdrop-blur-sm 
+                   rounded-full p-2 hover:bg-white/30 transition-all"
       >
         <ChevronRight className="text-white" size={24} />
       </button>
 
       {/* Slideshow Indicators */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex space-x-2">
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex space-x-3">
         {heroImages.map((_, index) => (
           <button
             key={index}
             onClick={() => setCurrentImage(index)}
-            className={`w-3 h-3 rounded-full transition-all ${index === currentImage ? "bg-white" : "bg-white/50"}`}
+            aria-label={`Go to slide ${index + 1}`}
+            className={`w-3 h-3 rounded-full transition-all ${
+              index === currentImage ? "bg-white" : "bg-white/50"
+            }`}
           />
         ))}
       </div>
@@ -79,32 +94,18 @@ export default function Hero() {
       <div className="relative z-10 text-center text-white px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
         {/* Headings */}
         <div className="font-extrabold text-5xl sm:text-6xl leading-snug">
-          <motion.span
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.8 }}
-            className="block pb-1 bg-gradient-to-r from-pink-500 via-orange-400 via-yellow-300 to-purple-500 bg-clip-text text-transparent"
-          >
-            Born to Create.
-          </motion.span>
-
-          <motion.span
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 1.2 }}
-            className="block pb-1 bg-gradient-to-r from-pink-500 via-orange-400 via-yellow-300 to-purple-500 bg-clip-text text-transparent"
-          >
-            Now’s your moment.
-          </motion.span>
-
-          <motion.span
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 1.6 }}
-            className="block pb-1 bg-gradient-to-r from-pink-500 via-orange-400 via-yellow-300 to-purple-500 bg-clip-text text-transparent"
-          >
-            The stage is set.
-          </motion.span>
+          {["Born to Create.", "Now’s your moment.", "The stage is set."].map((line, i) => (
+            <motion.span
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.8 + i * 0.4 }}
+              className="block pb-1 bg-gradient-to-r from-pink-500 via-orange-400 via-yellow-300 to-purple-500 
+                         bg-clip-text text-transparent"
+            >
+              {line}
+            </motion.span>
+          ))}
         </div>
 
         {/* Introduction */}
@@ -114,23 +115,29 @@ export default function Hero() {
           transition={{ duration: 1, delay: 2 }}
           className="text-lg sm:text-xl mt-8 max-w-3xl mx-auto leading-relaxed 
                      bg-gradient-to-r from-pink-500 via-orange-400 via-yellow-300 to-purple-500 
-                     bg-clip-text text-transparent font-medium pb-1"
+                     bg-clip-text text-transparent font-medium"
         >
           We believe that everyone has a voice to express and a vibe to share.
           Hence, we created a platform to help you find your real voice and innovative vibes.
         </motion.p>
 
-        {/* Single CTA Button */}
+        {/* CTA Button */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 2.2 }}
-          className="flex justify-center items-center mb-12"
+          className="flex justify-center items-center mt-10"
         >
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-            <Button size="lg" className="gradient-bg text-white hover:opacity-90 flex items-center gap-2 w-fit">
-              <Link href="#facilities">Explore Our Facilities</Link>
-            </Button>
+            <Link href="#facilities" passHref legacyBehavior>
+              <Button
+                asChild
+                size="lg"
+                className="gradient-bg text-white hover:opacity-90 flex items-center gap-2 w-fit"
+              >
+                <a>Explore Our Facilities</a>
+              </Button>
+            </Link>
           </motion.div>
         </motion.div>
 
@@ -139,7 +146,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 2.5 }}
-          className="animate-bounce"
+          className="animate-bounce mt-12"
         >
           <ArrowDown className="mx-auto text-white/70" size={32} />
         </motion.div>
