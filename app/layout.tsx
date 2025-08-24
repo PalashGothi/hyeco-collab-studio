@@ -15,10 +15,17 @@ export const metadata: Metadata = {
     "creative studio, multipurpose room, jupiter, venus, saturn, cafe, Bengaluru, creative space",
   generator: "v0.app",
   icons: {
-    icon: "/logo.jpeg", // make sure this file exists in /public
-    shortcut: "/logo.jpeg",
-    apple: "/logo.jpeg",
+    icon: [
+      { url: "/favicon-16x16.png?v=2", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png?v=2", sizes: "32x32", type: "image/png" },
+    ],
+    apple: [
+      { url: "/android-chrome-192x192.png?v=2", sizes: "192x192", type: "image/png" },
+      { url: "/android-chrome-512x512.png?v=2", sizes: "512x512", type: "image/png" },
+    ],
+    shortcut: "/favicon-32x32.png?v=2",
   },
+  manifest: "/site.webmanifest?v=2",
 }
 
 export default function RootLayout({
@@ -28,6 +35,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        {/* Explicit links for cross-browser + cache busting */}
+        <link rel="icon" href="/favicon-32x32.png?v=2" sizes="32x32" type="image/png" />
+        <link rel="icon" href="/favicon-16x16.png?v=2" sizes="16x16" type="image/png" />
+        <link rel="apple-touch-icon" href="/android-chrome-192x192.png?v=2" />
+        <link rel="apple-touch-icon" href="/android-chrome-512x512.png?v=2" />
+        <link rel="manifest" href="/site.webmanifest?v=2" />
+      </head>
       <body className={inter.className}>
         <Header />
         {children}
@@ -36,3 +51,4 @@ export default function RootLayout({
     </html>
   )
 }
+
