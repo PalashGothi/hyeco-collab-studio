@@ -8,19 +8,23 @@ import { FaInstagram, FaLinkedin, FaWhatsapp } from "react-icons/fa"
 
 export default function Contact() {
   const handleInstagram = () => {
-    window.open("https://www.instagram.com/hyecostudio/", "_blank")
+    window.location.href = "https://www.instagram.com/hyecostudio/"
   }
 
   const handleLinkedIn = () => {
-    window.open("https://www.linkedin.com/company/hye-co/", "_blank")
+    window.location.href = "https://www.linkedin.com/company/hye-co/"
   }
 
   const handleWhatsApp = () => {
-    window.open("https://wa.me/917795698001", "_blank") // Replace with your WhatsApp number
+    window.location.href = "https://wa.me/917795698001"
   }
 
   const handleCallNow = () => {
-    window.location.href = "tel:+917795698001" // Replace with your phone number
+    window.location.href = "tel:+917795698001"
+  }
+
+  const handleEmail = () => {
+    window.location.href = "mailto:info.hyeco@signitive.co.in"
   }
 
   // Minimum height for consistent card content height
@@ -65,10 +69,11 @@ export default function Contact() {
                 <p className="text-gray-600 mb-4 break-words text-sm">info.hyeco@signitive.co.in</p>
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                   <Button
+                    onClick={handleEmail}
                     variant="outline"
                     className="w-full bg-transparent hover:bg-gradient-to-r hover:from-yellow-400 hover:to-orange-500 hover:text-white transition-all duration-300"
                   >
-                    <a href="mailto:info.hyeco@signitive.co.in">Send Email</a>
+                    Send Email
                   </Button>
                 </motion.div>
               </CardContent>

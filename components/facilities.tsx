@@ -31,7 +31,7 @@ const facilities = [
   {
     id: "saturn",
     title: "Multipurpose Room",
-    description: "Coming soon - An expanded space for events and productions.",
+    description: "An expanded space for events and productions.",
     icon: Calendar,
     gradient: "from-pink-500 to-purple-600",
     features: ["Soundproof and Acoustic Environment", "Advanced Lighting", "Professional Audio Equipment", "Audio and Video Capabilities"],
@@ -40,7 +40,7 @@ const facilities = [
   {
     id: "cafe",
     title: "Café",
-    description: "Coming soon - A cozy space to relax, network, and fuel your creativity.",
+    description: "A cozy space to relax, network, and fuel your creativity.",
     icon: Coffee,
     gradient: "from-purple-600 to-indigo-600",
     features: ["Fresh Coffee & Snacks", "Networking Space", "Comfortable Seating", "Creative Atmosphere"],
