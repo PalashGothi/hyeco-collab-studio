@@ -8,11 +8,17 @@ import Footer from "@/components/footer"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Hyeco Collab Studio - Born to Create",
+  title: "Hyeco",
   description:
     "A vibrant creative space in Bengaluru. Have Your Expression with Hyeco's multipurpose rooms and creative facilities.",
-  keywords: "creative studio, multipurpose room, jupiter, venus, saturn, cafe, Bengaluru, creative space",
-    generator: 'v0.app'
+  keywords:
+    "creative studio, multipurpose room, jupiter, venus, saturn, cafe, Bengaluru, creative space",
+  generator: "v0.app",
+  icons: {
+    icon: "/logo.jpeg", // make sure this file exists in /public
+    shortcut: "/logo.jpeg",
+    apple: "/logo.jpeg",
+  },
 }
 
 export default function RootLayout({

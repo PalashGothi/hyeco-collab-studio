@@ -40,7 +40,7 @@ export default function About() {
             >
               <h3 className="text-2xl font-bold text-gray-800 mb-4">Our Mission</h3>
               <p className="text-gray-600 mb-6">
-                We created Hyeco Collab Studio as a vibrant creative space where artists, creators, and innovators can
+                We created Hyeco as a vibrant creative space where artists, creators, and innovators can
                 come together to express their unique voices and share their creative vibes with the world.
               </p>
 
