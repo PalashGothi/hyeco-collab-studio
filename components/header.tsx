@@ -107,7 +107,7 @@ export default function Header() {
               className="flex items-center px-4 py-2 w-full justify-center rounded-xl text-white 
               bg-gradient-to-r from-green-400 to-teal-500 hover:opacity-90 transition"
             >
-              <FaWhatsapp className="w-4 h-4 mr-2" /> WhatsApp
+              <FaWhatsapp className="w-4 h-4 mr-2" /> Book on WhatsApp
             </a>
           </nav>
         </div>
