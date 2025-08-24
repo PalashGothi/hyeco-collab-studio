@@ -31,10 +31,9 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20" 
-      // pt-20 ensures content starts below the fixed header
+      className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20"
     >
-      {/* Background Slideshow */}
+      {/* Background Slideshow with Drag Support */}
       <div className="absolute inset-0">
         <AnimatePresence mode="wait">
           <motion.div
@@ -45,14 +44,27 @@ export default function Hero() {
             transition={{ duration: 1 }}
             className="absolute inset-0"
           >
-            <Image
-              src={heroImages[currentImage].url}
-              alt={heroImages[currentImage].alt}
-              fill
-              priority
-              className="object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/50 to-black/70"></div>
+            <motion.div
+              drag="x"
+              dragConstraints={{ left: 0, right: 0 }}
+              onDragEnd={(_, info) => {
+                if (info.offset.x < -100) {
+                  nextImage() // swipe left → next
+                } else if (info.offset.x > 100) {
+                  prevImage() // swipe right → prev
+                }
+              }}
+              className="w-full h-full"
+            >
+              <Image
+                src={heroImages[currentImage].url}
+                alt={heroImages[currentImage].alt}
+                fill
+                priority
+                className="object-cover select-none pointer-events-none"
+              />
+              <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/50 to-black/70"></div>
+            </motion.div>
           </motion.div>
         </AnimatePresence>
       </div>
