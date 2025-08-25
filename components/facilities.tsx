@@ -7,7 +7,7 @@ import { motion } from "framer-motion"
 const facilities = [
   {
     id: "jupiter",
-    title: "Multipurpose Room - Jupiter",
+    title: "Multipurpose Space - Jupiter",
     description: "Versatile space perfect for events, workshops, jamming, classes, photoshoots and movie screening.",
     icon: Music,
     gradient: "from-yellow-400 to-orange-500",
@@ -21,7 +21,7 @@ const facilities = [
   },
   {
     id: "venus",
-    title: "Multipurpose Room - Venus",
+    title: "Multipurpose Space - Venus",
     description: "Versatile space perfect for music recording, jamming sessions and podcasts.",
     icon: Users,
     gradient: "from-orange-500 to-pink-500",
@@ -30,7 +30,7 @@ const facilities = [
   },
   {
     id: "saturn",
-    title: "Multipurpose Room",
+    title: "Multipurpose Space",
     description: "An expanded space for events and productions.",
     icon: Calendar,
     gradient: "from-pink-500 to-purple-600",
