@@ -56,15 +56,6 @@ export default function About() {
                                         Near Shubh Enclave, Harlur Main Road<br />
                                         Bengaluru – 560102
                                     </p>
-                                    <a
-                                        href="https://www.google.com/maps/search/?api=1&query=Hyeco+Collab+Studio+Bengaluru"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="inline-flex items-center gap-2 text-sm font-medium text-white hover:text-primary transition-colors hover:underline"
-                                    >
-                                        <Navigation className="w-4 h-4" />
-                                        Get Directions
-                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -101,6 +92,7 @@ export default function About() {
                                 Get Directions
                             </a>
                         </div>
+
 
                         {/* Overlay Gradient */}
                         <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent pointer-events-none" />

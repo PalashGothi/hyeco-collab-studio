@@ -75,12 +75,12 @@ export default function Hero() {
                 {/* Right Visuals - Infinite Marquee Gallery */}
                 <motion.div
                     style={{ y: y1 }}
-                    className="relative hidden lg:block overflow-hidden rounded-2xl border border-white/10 shadow-2xl bg-black/40 backdrop-blur-sm"
+                    className="relative block overflow-hidden rounded-2xl border border-white/10 shadow-2xl bg-black/40 backdrop-blur-sm mt-8 lg:mt-0"
                 >
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-10 pointer-events-none" />
 
                     {/* Marquee Row */}
-                    <div className="flex w-full overflow-hidden relative h-[500px]">
+                    <div className="flex w-full overflow-hidden relative h-[300px] lg:h-[500px]">
                         <motion.div
                             animate={{ x: ["0%", "-50%"] }}
                             transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
@@ -88,7 +88,7 @@ export default function Hero() {
                             style={{ width: "max-content" }}
                         >
                             {[...galleryImages, ...galleryImages].map((src, i) => (
-                                <div key={i} className="relative w-[300px] h-[450px] shrink-0 rounded-xl overflow-hidden transition-all duration-500 hover:scale-105 cursor-pointer grayscale-0 brightness-100">
+                                <div key={i} className="relative w-[200px] h-[300px] lg:w-[300px] lg:h-[450px] shrink-0 rounded-xl overflow-hidden transition-all duration-500 hover:scale-105 cursor-pointer grayscale-0 brightness-100">
                                     <Image
                                         src={src}
                                         alt="Studio Gallery"
