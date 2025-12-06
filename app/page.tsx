@@ -1,7 +1,7 @@
-import Hero from "@/components/hero"
-import Facilities from "@/components/facilities"
-import About from "@/components/about"
-import Contact from "@/components/contact"
+import Hero from "@/components/sections/hero"
+import Facilities from "@/components/sections/facilities"
+import About from "@/components/sections/about"
+import Contact from "@/components/sections/contact"
 
 export default function Home() {
   return (

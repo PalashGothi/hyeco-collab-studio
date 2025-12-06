@@ -2,8 +2,8 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
-import Header from "@/components/header"
-import Footer from "@/components/footer"
+import Navbar from "@/components/ui/navbar"
+import Footer from "@/components/ui/footer"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   description:
     "A vibrant creative space in Bengaluru. Have Your Expression with Hyeco's multipurpose rooms and creative facilities.",
   keywords:
-    "creative studio, multipurpose room, jupiter, venus, saturn, cafe, Bengaluru, creative space",
+    "creative studio, multipurpose room, jupiter, venus, mars, cafe, Bengaluru, creative space",
   generator: "v0.app",
   icons: {
     icon: [
@@ -44,7 +44,7 @@ export default function RootLayout({
         <link rel="manifest" href="/site.webmanifest?v=2" />
       </head>
       <body className={inter.className}>
-        <Header />
+        <Navbar />
         {children}
         <Footer />
       </body>
