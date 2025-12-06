@@ -1,6 +1,6 @@
 "use client"
 
-import { useRef } from "react"
+import { useRef, useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { motion, useScroll, useTransform } from "framer-motion"
@@ -20,6 +20,15 @@ export default function Hero() {
     const containerRef = useRef<HTMLDivElement>(null)
     const { scrollY } = useScroll()
     const y1 = useTransform(scrollY, [0, 500], [0, 200])
+
+    const [isMobile, setIsMobile] = useState(true)
+
+    useEffect(() => {
+        const checkMobile = () => setIsMobile(window.innerWidth < 1024)
+        checkMobile()
+        window.addEventListener("resize", checkMobile)
+        return () => window.removeEventListener("resize", checkMobile)
+    }, [])
 
     return (
         <section
@@ -74,7 +83,7 @@ export default function Hero() {
 
                 {/* Right Visuals - Infinite Marquee Gallery */}
                 <motion.div
-                    style={{ y: y1 }}
+                    style={isMobile ? undefined : { y: y1 }}
                     className="relative block overflow-hidden rounded-2xl border border-white/10 shadow-2xl bg-black/40 backdrop-blur-sm mt-8 lg:mt-0"
                 >
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-10 pointer-events-none" />
